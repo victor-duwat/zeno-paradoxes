@@ -19,5 +19,5 @@ def paradox_achille_tortue ():
 
         if position_tortue == position_achille:
             break
-
-paradox_achille_tortue ()
+if __name__ == "__main__" :
+    paradox_achille_tortue ()
