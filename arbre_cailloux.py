@@ -11,4 +11,4 @@ def caillou_arbres(n):
         if caillou == 8:
             break
     print(compteur)
-caillou_arbres(200)
+caillou_arbres(50)
