@@ -12,3 +12,4 @@ def caillou_arbres(n):
             break
     print(compteur)
 caillou_arbres(50)
+#fin du projet 
