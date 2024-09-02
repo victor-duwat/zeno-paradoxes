@@ -1,19 +1,23 @@
-position_achille = 0.0
-position_tortue = 10.0
+def paradox_achille_tortue ():
 
-vitesse_achille = 2.0
-vitesse_tortue = 1.0
+    position_achille = 0.0
+    position_tortue = 10.0
 
-for i in range (1000):
-    temps = ( position_tortue - position_achille ) / vitesse_achille
+    vitesse_achille = 2.0
+    vitesse_tortue = 1.0
+
+    for i in range (1000):
+        temps = ( position_tortue - position_achille ) / vitesse_achille
     
-    position_achille = position_tortue
+        position_achille = position_tortue
 
-    position_tortue = position_tortue + (temps * vitesse_tortue)
+        position_tortue = position_tortue + (temps * vitesse_tortue)
 
-    print (i+1," temps ",temps)
-    print (" achille ",position_achille)
-    print (" tortue ",position_tortue)
+        print (i+1," temps ",temps)
+        print (" achille ",position_achille)
+        print (" tortue ",position_tortue)
 
-    if position_tortue == position_achille:
-        break
+        if position_tortue == position_achille:
+            break
+
+paradox_achille_tortue ()
