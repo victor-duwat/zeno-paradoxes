@@ -1,5 +1,5 @@
 from Achille import paradox_achille_tortue
-from arbre_cailloux import caillou_arbres
+from ArbreCailloux import arbre_cailloux
 from Fleche import flecche
 fin = False
 while not fin :
@@ -19,7 +19,7 @@ while not fin :
         paradox_achille_tortue()
 
     if choix == 2 :
-        caillou_arbres()
+        arbre_cailloux()
 
     if choix == 3:
         flecche ()

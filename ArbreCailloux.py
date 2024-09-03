@@ -1,4 +1,4 @@
-def caillou_arbres(n = 200):
+def arbre_cailloux(n = 200):
     diviseur = 2 
     caillou = 0
     arbre = 8
@@ -12,4 +12,4 @@ def caillou_arbres(n = 200):
             break
     print(compteur)
 if __name__ == "__main__" :
-    caillou_arbres()
+    arbre_cailloux()
