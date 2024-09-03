@@ -1,10 +1,4 @@
-def paradox_achille_tortue ():
-
-    position_achille = 0.0
-    position_tortue = 10.0
-
-    vitesse_achille = 2.0
-    vitesse_tortue = 1.0
+def paradox_achille_tortue (position_achille = 0.0, position_tortue = 10.0, vitesse_achille = 2.0,  vitesse_tortue = 1.0):
 
     for i in range (1000):
         temps = ( position_tortue - position_achille ) / vitesse_achille
@@ -19,5 +13,5 @@ def paradox_achille_tortue ():
 
         if position_tortue == position_achille:
             break
-
-paradox_achille_tortue ()
+if __name__ == "__main__" :
+    paradox_achille_tortue ()
