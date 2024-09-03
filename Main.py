@@ -1,6 +1,6 @@
-from Achille import paradox_achille_tortue
-from ArbreCailloux import arbre_cailloux
-from Fleche import flecche
+from resolver.Achille import paradox_achille_tortue
+from resolver.ArbreCailloux import arbre_cailloux
+from resolver.Fleche import flecche
 fin = False
 while not fin :
     reponse = False
