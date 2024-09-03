@@ -7,9 +7,9 @@ def arbre_cailloux(n = 200):
         compteur += 1
         caillou += arbre/diviseur
         diviseur *= 2
-        print(caillou)
+        print("distance caillou : ",caillou)
         if caillou == 8:
             break
-    print(compteur)
+    print("nombre de répétitons : ",compteur)
 if __name__ == "__main__" :
     arbre_cailloux()
