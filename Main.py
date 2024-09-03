@@ -1,6 +1,6 @@
 from resolver.Achille import paradox_achille_tortue
 from resolver.ArbreCailloux import arbre_cailloux
-from resolver.Fleche import flecche
+from resolver.Fleche import fleche
 fin = False
 while not fin :
     reponse = False
@@ -22,4 +22,4 @@ while not fin :
         arbre_cailloux()
 
     if choix == 3:
-        flecche ()
+        fleche ()
