@@ -1,50 +1,63 @@
 import pygame
 import time
 
-
-def paradox_achille_tortue(position_achille=0.0, position_tortue=10.0, vitesse_achille=2.0, vitesse_tortue=1.0, seuil=19):
-
-    pygame.init()
-
-    largeur_fenetre = 800
-    hauteur_fenetre = 200
-    fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-    pygame.display.set_caption("Paradoxe d'Achille et de la tortue")
+pygame.init()
+LARGEUR_FENETRE = 800
+HAUTEUR_FENETRE = 200
 
 
-    blanc = (255, 255, 255)
-    rouge = (255, 0, 0)
-    vert = (0, 255, 0)
-    noir = (0, 0, 0)
+BLANC = (255, 255, 255)
+ROUGE = (255, 0, 0)
+VERT = (0, 255, 0)
+NOIR = (0, 0, 0)
 
+POSITION_ACHILLE=0.0
+POSITION_TORTUE=10.0
+VITESSE_ACHILLE=2.0
+VITESSE_TORTUE=1.0
+TEMPS = 0
+
+def calcul_paradox():
+
+    global POSITION_ACHILLE, POSITION_TORTUE, TEMPS
+    
+    TEMPS = (POSITION_TORTUE - POSITION_ACHILLE) / VITESSE_ACHILLE
+
+    POSITION_ACHILLE = POSITION_TORTUE
+
+    POSITION_TORTUE += TEMPS * VITESSE_TORTUE
+
+
+    
+def affichage_terminal():
+    for i in range(1000):
+        calcul_paradox()
+        print(i+1, " TEMPS ", TEMPS)
+        print(" achille ", POSITION_ACHILLE)
+        print(" tortue ", POSITION_TORTUE)
+
+        if POSITION_TORTUE == POSITION_ACHILLE:
+            break
+
+def affichage_graphique():
     running = True
+    fenetre = pygame.display.set_mode((LARGEUR_FENETRE, HAUTEUR_FENETRE))
+    pygame.display.set_caption("Paradoxe d'Achille et de la tortue")
     for i in range(1000):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
                 break
-        
-        temps = (position_tortue - position_achille) / vitesse_achille
 
-        position_achille = position_tortue
+        fenetre.fill(NOIR)
+        pygame.draw.circle(fenetre, ROUGE, (int(POSITION_ACHILLE * 40), HAUTEUR_FENETRE // 2), 10)
+        pygame.draw.circle(fenetre, VERT, (int(POSITION_TORTUE * 40), HAUTEUR_FENETRE // 2), 10)
 
-        position_tortue += temps * vitesse_tortue
-
-        fenetre.fill(noir)
-
-
-        pygame.draw.circle(fenetre, rouge, (int(position_achille * 40), hauteur_fenetre // 2), 10)
-        pygame.draw.circle(fenetre, vert, (int(position_tortue * 40), hauteur_fenetre // 2), 10)
+        calcul_paradox()
 
         pygame.display.flip()
-
-        print(i+1, " temps ", temps)
-        print(" achille ", position_achille)
-        print(" tortue ", position_tortue)
-
-        time.sleep(0.5)
-
-        if position_tortue == position_achille:
+        time.sleep(0.75)
+        if POSITION_TORTUE == POSITION_ACHILLE:
             break
 
         if not running:
@@ -52,5 +65,19 @@ def paradox_achille_tortue(position_achille=0.0, position_tortue=10.0, vitesse_a
 
     pygame.quit()
 
-if __name__ == "__main__":
-    paradox_achille_tortue()
+def choisir_affichage():
+    a_repondu = False
+    while a_repondu == False:
+
+        choix = int(input("1 pour affichage en terminal, 2 pour affichage en interface graphique: "))
+        if choix == 1:
+            affichage_terminal()
+            a_repondu = True
+        elif choix == 2:
+            affichage_graphique()
+            a_repondu = True
+        else :
+            print ("mauvaise saisie")
+
+if __name__ == "__main__": 
+    choisir_affichage()
