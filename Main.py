@@ -1,4 +1,4 @@
-from resolver.achille import choisir_affichage
+from resolver.achille import main
 from resolver.caillou import arbre_cailloux
 from resolver.fleche import fleche
 fin = False
@@ -16,7 +16,7 @@ while not fin :
             print ("mauvaise saisie")
 
     if choix == 1:
-        choisir_affichage()
+        main()
 
     if choix == 2 :
         arbre_cailloux()

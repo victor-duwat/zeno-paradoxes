@@ -65,19 +65,22 @@ def affichage_graphique():
 
     pygame.quit()
 
-def choisir_affichage():
-    a_repondu = False
-    while a_repondu == False:
 
-        choix = int(input("1 pour affichage en terminal, 2 pour affichage en interface graphique: "))
-        if choix == 1:
+def input_choix():
+    choix = int(input("1 pour affichage en terminal, 2 pour affichage en interface graphique: "))
+    return choix
+
+def lancement_affichage(choix):
+    if choix == 1:
             affichage_terminal()
-            a_repondu = True
-        elif choix == 2:
+    elif choix == 2:
             affichage_graphique()
-            a_repondu = True
-        else :
-            print ("mauvaise saisie")
+    else :
+        input_choix()
+
+def main():
+     choix = input_choix()
+     lancement_affichage(choix)
 
 if __name__ == "__main__": 
-    choisir_affichage()
+    main()
