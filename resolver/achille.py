@@ -34,7 +34,7 @@ def affichage_terminal():
 
 def affichage_graphique():
     running = True
-    animation_started = False  # Indicateur de lancement d'animation
+    animation_started = False 
     fenetre = pygame.display.set_mode((LARGEUR_FENETRE, HAUTEUR_FENETRE))
     pygame.display.set_caption("Paradoxe d'Achille et de la tortue")
 
